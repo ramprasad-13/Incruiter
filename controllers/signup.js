@@ -78,7 +78,8 @@ const signup = async (req, res) => {
         );
 
         // Create a verification link
-        const verificationLink = `${req.protocol}://${req.get('host')}/verify/${token}`;
+        const domain = process.env.DOMAIN;
+        const verificationLink = `${domain}/verify/${token}`;
 
         // Prepare the email content
         const htmlContent = `
