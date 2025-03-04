@@ -10,9 +10,6 @@
    - [POST /api/auth/login](#post-apiroute2)
    - [POST /api/auth/password/reset](#post-apiroute3)
    - [GET /api/protected/user](#get-apiroute4)
-5. [Contributing](#contributing)
-6. [License](#license)
-
 ---
 
 ## Installation
