@@ -1,0 +1,6 @@
+
+    MONGO_URI=give local server url or mongodb atlas url
+    JWT_SECRET=this-is-a-top-secret
+    APP_USER='your_email.com'
+    APP_PASS='your_password_got_from_apppasswords_in_google_acc'
+    CORS_ORIGIN='define * if you want to allow any frontend, other wise give frontend deployed domain'
