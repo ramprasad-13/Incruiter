@@ -98,7 +98,8 @@ const signup = async (req, res) => {
     } catch (error) {
         console.log(error);
         res.status(500).json({
-            error: "Registration was unsuccessful"
+            error: "Registration was unsuccessful",
+            Reason: error.message
         });
     }
 };
