@@ -17,7 +17,7 @@ corsOptions = {
     optionsSuccessStatus: 200
 }
 
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(helmet());
 
 app.use(express.json());
@@ -42,3 +42,4 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
+module.exports = app;
