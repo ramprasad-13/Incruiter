@@ -68,7 +68,8 @@ const reset = async (req, res) => {
 
         // Respond to the user
         res.status(201).json({
-            domain:process.env.DOMAIN,
+            domain:`${process.env.DOMAIN}`,
+            success:'ok'
             message: `Hi ${findUser.fullName}, your account password was updated successfully! Please check your email to verify your account.`
         });
 
