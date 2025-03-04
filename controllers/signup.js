@@ -77,9 +77,8 @@ const signup = async (req, res) => {
             { expiresIn: '1h' } // Token expires in 1 hour
         );
 
-        // Create a verification link
-        const domain = process.env.DOMAIN;
-        const verificationLink = `${domain}/verify/${token}`;
+        // Create a verification link        
+        const verificationLink = `${req.protocol}://${req.get('host')}/verify/${token}`;
 
         // Prepare the email content
         const htmlContent = `
