@@ -53,8 +53,7 @@ const reset = async (req, res) => {
         );
 
         // Create a verification link
-        const domain = process.env.DOMAIN;
-        const verificationLink = `${domain}/verify/${token}`;
+        const verificationLink = `${req.protocol}://${req.get('host')}/verify/${token}`;
 
         // Prepare the email content
         const htmlContent = `
@@ -68,8 +67,6 @@ const reset = async (req, res) => {
 
         // Respond to the user
         res.status(201).json({
-            domain:`${process.env.DOMAIN}`,
-            success:'ok'
             message: `Hi ${findUser.fullName}, your account password was updated successfully! Please check your email to verify your account.`
         });
 
