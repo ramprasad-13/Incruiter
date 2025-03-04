@@ -66,9 +66,7 @@ const login = async (req, res) => {
                 { expiresIn: '1h' }
             );
 
-            
-            const domain = process.env.DOMAIN;
-            const verificationLink = `${domain}/verify/${token}`;
+            const verificationLink = `${req.protocol}://${req.get('host')}/verify/${token}`;
             
             const htmlContent = `
                 <p>Hi ${user.fullName},</p>
