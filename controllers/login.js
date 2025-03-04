@@ -66,7 +66,10 @@ const login = async (req, res) => {
                 { expiresIn: '1h' }
             );
 
-            const verificationLink = `${req.protocol}://${req.get('host')}/verify/${token}`;
+            
+            const domain = process.env.DOMAIN;
+            const verificationLink = `${domain}/verify/${token}`;
+            
             const htmlContent = `
                 <p>Hi ${user.fullName},</p>
                 <p>It looks like you're trying to log in, but your email isn't verified yet.</p>
